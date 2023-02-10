@@ -7,6 +7,13 @@ scene = 'title'
 state = ''
 click_mode = ''
 
+class Input():
+    class Key():
+        up = False
+        left = False
+        down = False
+        right = False
+
 class World():
     field = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -47,8 +54,14 @@ class World():
     thing = []
 
     class Player():
-        x = 0
-        y = 0
+        x = 32
+        y = 32
         speed = 160
-        jump_power = -400
-        jump = 1
+        velocity_x = 0
+        velocity_y = 0
+        terminal_speed = 1000
+        jump_power = -600
+        jump = 0
+        ground = False
+
+    gravity = 1600

@@ -36,6 +36,18 @@ def input_handle():
             if var.scene == 'title':
                 title.mouse_up(mouse[0], mouse[1], event.button)
 
+        if event.type == pygame.KEYDOWN:
+            key = event.key
+
+            if var.scene == 'field':
+                field.key_down(key)
+
+        if event.type == pygame.KEYUP:
+            key = event.key
+
+            if var.scene == 'field':
+                field.key_up(key)
+
 def loop_scene():
     if var.scene == 'title':
         title.loop()
